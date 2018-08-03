@@ -3,9 +3,17 @@ package br.com.entra21java.bean;
 public class AlimentoBean {
     
     private int id;
-    private String nome;
+    private String nome, descricao;
     private byte quantidade;
     private double preco;
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
 
     public int getId() {
         return id;
