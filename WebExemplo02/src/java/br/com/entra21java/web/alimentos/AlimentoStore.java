@@ -28,10 +28,10 @@ public class AlimentoStore extends HttpServlet {
         alimento.setDescricao(descricao);
         int codigo = new AlimentoDAO().adicionar(alimento);
         
-        PrintWriter out = resp.getWriter();
-        out.println("Cadastrado com sucesso!");
-    }
-    
+        if (codigo > 0) {
+            resp.sendRedirect("/WebExemplo02/alimentos");
+        }
+    }    
     
 
 }

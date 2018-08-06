@@ -17,7 +17,7 @@ public class AlimentoEditar extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int id = Integer.parseInt(req.getParameter("id"));
         AlimentoBean alimento = new AlimentoDAO().obterPeloId(id);
-        
+
         PrintWriter out = resp.getWriter();
         out.println("<!DOCTYPE html>");
         out.println("<html>");
@@ -25,12 +25,12 @@ public class AlimentoEditar extends HttpServlet {
         out.println("<title>Alimentos - Editar</title>");
         out.println("</head>");
         out.println("<body>");
-        out.println("<form action='/alimentos/update' method='post'>");
-        out.println("<input type='hidden' name='id' value='" 
+        out.println("<form action='/WebExemplo02/alimentos/update' method='post'>");
+        out.println("<input type='hidden' name='id' value='"
                 + alimento.getId() + "'>");
         out.println("<div>");
         out.println("<label for='campo-nome'>Nome: </label>");
-        out.println("<input type='text' id='campo-nome' name='nome' " 
+        out.println("<input type='text' id='campo-nome' name='nome' "
                 + "value='" + alimento.getNome() + "'>");
         out.println("</div>");
         out.println("<div>");
@@ -45,8 +45,8 @@ public class AlimentoEditar extends HttpServlet {
         out.println("</div>");
         out.println("<div>");
         out.println("<label for='campo-descricao'>Descrição: </label>");
-        out.println("<textarea name='' id='campo-descricao' name='descricao' "
-                + "value='" + alimento.getDescricao() + "'></textarea>");
+        out.println("<textarea name='' id='campo-descricao' name='descricao'>" 
+                    + alimento.getDescricao() + "</textarea>");
         out.println("</div>");
         out.println("<input type='submit' value='Alterar'>");
         out.println("</form>");

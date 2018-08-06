@@ -21,17 +21,18 @@ public class AlimentoIndex extends HttpServlet {
         PrintWriter out = resp.getWriter();
 
         out.println("<!DOCTYPE html>");
+        out.println("<link rel='stylesheet' type='text/css' href='bootstrap/css/bootstrap.css'/>");
         out.println("<html>");
         out.println("<head>");
         out.println("<title>Alimentos - Lista</title>");
-        out.println("<link rel='stylesheet' type='text/css' href='alimentos-index.css'>");
         out.println("</head>");
         out.println("<body>");
         out.println("<h3>Lista de Alimentos</h3>");
-        out.println("<a href='/WebExemplo02/alimentos/cadastro' class='botao-cadastro'>Novo Alimento</a>");
-        out.println("<table>");
+        out.println("<a href='/WebExemplo02/alimentos/cadastro'"
+                + " class='btn btn-primary float-right'>Novo Alimento</a>");
+        out.println("<table class='table table-striped table-dark'>");
         out.println("<thead>");
-        out.println("<tr>");
+        out.println("<tr class='table-primary'>");
         out.println("<th>Código</th>");
         out.println("<th>Nome</th>");
         out.println("<th>Quantidade</th>");
